@@ -3,6 +3,7 @@
 ## tech:
 - Python 3.9.1
 - Flask 1.1.2
+- Bootstrap v5.0.0-beta1
 
 
 ### Lessons:
