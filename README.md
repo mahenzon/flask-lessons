@@ -6,6 +6,7 @@
 - Bootstrap v5.0.0-beta1
 - SQLAlchemy==1.3.22
 - Flask-SQLAlchemy==2.4.4
+- Flask-Login==0.5.0
 
 
 ### Lessons:
