@@ -17,3 +17,12 @@
     - `before_request` and `after_request`, `g` object, response headers
     - raise werkzeug exceptions (like `BadRequest`), use `app.logger`
     - process unhandled exceptions using `app.errorhandler`, use `app.logger.exception`
+
+2. Templates: Jinja2 ([result](https://github.com/mahenzon/flask-lessons/tree/lesson-2))
+    - create base template and index template
+    - create users blueprint, list view and template
+    - create user details view and template, handle user not found
+    - create endpoints for users app, use `url_for` for links
+    - add and connect bootstrap 5, use starter template
+    - add navbar with links
+    - create articles blueprint, list view and template, add to navbar
