@@ -4,6 +4,8 @@
 - Python 3.9.1
 - Flask 1.1.2
 - Bootstrap v5.0.0-beta1
+- SQLAlchemy==1.3.22
+- Flask-SQLAlchemy==2.4.4
 
 
 ### Lessons:
