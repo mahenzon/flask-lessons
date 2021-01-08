@@ -1,4 +1,5 @@
-from flask import Flask, request
+from time import time
+from flask import Flask, request, g
 
 app = Flask(__name__)
 
@@ -84,3 +85,31 @@ def custom_status_code():
         return "code from json", request.json["code"]
 
     return "", 204
+
+
+@app.before_request
+def process_before_request():
+    """
+    Sets start_time to `g` object
+
+    :return:
+    """
+    g.start_time = time()
+
+
+@app.after_request
+def process_after_request(response):
+    """
+    adds process time in headers
+
+    Example: visit http://127.0.0.1:5000/greet/GitHub/
+    headers will contain:
+    < process-time: 0.0001270771026611328
+
+    :param response:
+    :return:
+    """
+    if hasattr(g, "start_time"):
+        response.headers["process-time"] = time() - g.start_time
+
+    return response
