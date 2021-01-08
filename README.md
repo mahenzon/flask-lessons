@@ -29,3 +29,12 @@
     - add and connect bootstrap 5, use starter template
     - add navbar with links
     - create articles blueprint, list view and template, add to navbar
+
+3. Flask-SQLAlchemy; Flask-Login ([result](https://github.com/mahenzon/flask-lessons/tree/lesson-3))
+    - install and setup Flask-SQLAlchemy
+    - create User model
+    - create commands init-db and create-users
+    - upgrade users list / details to use db (load users from db)
+    - install Flask-Login, update User model with UserMixin
+    - configure LoginManager, create login and logout views, update templates
+    - use `login_required` to restrict access to views
