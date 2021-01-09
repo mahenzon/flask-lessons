@@ -45,7 +45,12 @@ def create_admin():
     """
     from blog.models import User
 
+    # # delete existing admin ?
+    # User.query.filter_by(username="admin").delete(synchronize_session="fetch")
+
+    # create new
     admin = User(username="admin", is_staff=True)
+    admin.password = os.environ.get("ADMIN_PASSWORD") or "adminpass"
 
     db.session.add(admin)
     db.session.commit()
