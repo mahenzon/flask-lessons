@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template
 
 from blog.views.auth import login_manager, auth_app
@@ -5,7 +6,10 @@ from blog.views.users import users_app
 from blog.views.articles import articles_app
 from blog.models.database import db
 
+cfg_name = os.environ.get("CONFIG_NAME") or "ProductionConfig"
+
 app = Flask(__name__)
+app.config.from_object(f"blog.configs.{cfg_name}")
 
 # views
 app.register_blueprint(auth_app, url_prefix="/auth")
@@ -13,12 +17,9 @@ app.register_blueprint(users_app, url_prefix="/users")
 app.register_blueprint(articles_app, url_prefix="/articles")
 
 # db
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////tmp/blog.db"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
 
 # auth
-app.config["SECRET_KEY"] = "abcdefg123456"
 login_manager.init_app(app)
 
 
