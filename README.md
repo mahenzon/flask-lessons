@@ -40,3 +40,14 @@
     - install Flask-Login, update User model with UserMixin
     - configure LoginManager, create login and logout views, update templates
     - use `login_required` to restrict access to views
+
+4. Docker, docker-compose, Postgres. Schema migrations using Flask-Migrate + alembic ([result](https://github.com/mahenzon/flask-lessons/tree/lesson-4))
+    - install psycopg2
+    - create class-based configs, move configuration there
+    - create Dockerfile for the app
+    - create docker-compose for the project, connect Postgres
+    - install and configure Flask-Migrate
+    - create first migration: add user table
+    - add email field to the User model
+    - change command create-users to create-admin
+    - set compare_type = True and demo column changes
