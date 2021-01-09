@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template
+from flask_migrate import Migrate
 
 from blog.views.auth import login_manager, auth_app
 from blog.views.users import users_app
@@ -18,6 +19,8 @@ app.register_blueprint(articles_app, url_prefix="/articles")
 
 # db
 db.init_app(app)
+migrate = Migrate(app, db)
+
 
 # auth
 login_manager.init_app(app)
