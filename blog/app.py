@@ -19,7 +19,7 @@ app.register_blueprint(articles_app, url_prefix="/articles")
 
 # db
 db.init_app(app)
-migrate = Migrate(app, db)
+migrate = Migrate(app, db, compare_type=True)
 
 
 # auth

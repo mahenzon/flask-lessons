@@ -18,4 +18,4 @@ def user_details(user_id: int):
     if user is None:
         raise NotFound(f"User #{user_id} doesn't exist!")
 
-    return render_template('users/details.html', user=user)
+    return render_template("users/details.html", user=user)
