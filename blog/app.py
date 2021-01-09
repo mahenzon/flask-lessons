@@ -1,12 +1,14 @@
 from flask import Flask, render_template
 
-from blog.auth import login_manager, init_auth_views
+from blog.views.auth import login_manager, auth_app
 from blog.views.users import users_app
 from blog.views.articles import articles_app
 from blog.models.database import db
 
 app = Flask(__name__)
 
+# views
+app.register_blueprint(auth_app, url_prefix="/auth")
 app.register_blueprint(users_app, url_prefix="/users")
 app.register_blueprint(articles_app, url_prefix="/articles")
 
@@ -18,7 +20,6 @@ db.init_app(app)
 # auth
 app.config["SECRET_KEY"] = "abcdefg123456"
 login_manager.init_app(app)
-init_auth_views(app)
 
 
 @app.route("/")

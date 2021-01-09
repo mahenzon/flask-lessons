@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import LoginManager, login_user, logout_user, login_required
-
 from blog.models import User
 
+auth_app = Blueprint("auth_app", __name__)
+
 login_manager = LoginManager()
-login_manager.login_view = "login"
+login_manager.login_view = "auth_app.login"
 
 
 @login_manager.user_loader
@@ -12,6 +13,7 @@ def load_user(user_id):
     return User.query.filter_by(id=user_id).one_or_none()
 
 
+@auth_app.route("/login/", methods=["GET", "POST"], endpoint="login")
 def login():
     if request.method == "GET":
         return render_template("auth/login.html")
@@ -32,27 +34,23 @@ def login():
 
 @login_manager.unauthorized_handler
 def unauthorized():
-    return redirect(url_for("login"))
+    return redirect(url_for("auth_app.login"))
 
 
+@auth_app.route("/logout/", endpoint="logout")
 @login_required
 def logout():
     logout_user()
     return redirect(url_for("index"))
 
 
+@auth_app.route("/secret/")
 @login_required
 def secret_view():
     return "Super secret data"
 
 
-def init_auth_views(app: Flask):
-    app.add_url_rule("/login/", view_func=login, methods=["GET", "POST"])
-    app.add_url_rule("/logout/", view_func=logout)
-    app.add_url_rule("/secret/", view_func=secret_view)
-
-
 __all__ = [
     "login_manager",
-    "init_auth_views",
+    "auth_app",
 ]
