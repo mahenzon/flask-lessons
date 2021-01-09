@@ -7,6 +7,8 @@
 - SQLAlchemy==1.3.22
 - Flask-SQLAlchemy==2.4.4
 - Flask-Login==0.5.0
+- alembic==1.4.3
+- Flask-Migrate==2.5.3
 
 
 ### Lessons:
