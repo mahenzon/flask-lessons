@@ -64,3 +64,8 @@
     - create register view, register user
     - move existing 'login' view to 'login_as' (for admins)
     - create login view for users
+
+6. Author and Article models. Relationships one-to-one and one-to-many ([result](https://github.com/mahenzon/flask-lessons/tree/lesson-6))
+    - create Author and Article models, add relationships
+    - create views for authors and articles
+    - create view for creating an article
