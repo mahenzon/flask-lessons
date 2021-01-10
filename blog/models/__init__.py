@@ -4,4 +4,6 @@ from blog.models.article import Article
 
 __all__ = [
     "User",
+    "Author",
+    "Article",
 ]
