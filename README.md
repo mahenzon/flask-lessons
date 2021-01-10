@@ -51,3 +51,16 @@
     - add email field to the User model
     - change command create-users to create-admin
     - set compare_type = True and demo column changes
+
+5. Flask-Bcrypt, WTForms. Allow users to register and login ([result](https://github.com/mahenzon/flask-lessons/tree/lesson-5))
+    - install and configure Flask-Bcrypt
+    - create password field for user, hash it
+    - add first_name and last_name to User, mark email field as unique
+    - install WTForms + email-validator and Flask-WTF
+    - create template macro render_field
+    - enable csrf protection
+    - create RegistrationForm
+    - create register template
+    - create register view, register user
+    - move existing 'login' view to 'login_as' (for admins)
+    - create login view for users
