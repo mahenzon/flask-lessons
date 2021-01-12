@@ -101,3 +101,13 @@
     - install ComboJSONAPI and apispec + PyYAML
     - create and use api spec plugin
     - create schemas and views for the rest of models
+
+10. flask-combo-jsonapi, combojsonapi: EventPlugin, PermissionPlugin ([result](https://github.com/mahenzon/flask-lessons/tree/lesson-10))
+    - add EventPlugin
+    - create ArticleListEvents: event_get_count
+    - create AuthorDetailEvents: event_get_articles_count
+    - create UserDetailEvents: event_update_avatar. Add YAML spec
+    - setup PermissionPlugin
+    - create UserPermission
+    - add UserPermission for User views
+    - create permission for PATCH user
