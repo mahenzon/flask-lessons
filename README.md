@@ -69,3 +69,13 @@
     - create Author and Article models, add relationships
     - create views for authors and articles
     - create view for creating an article
+
+7. Tag model. Article-Tag association. Many-to-many relationship ([result](https://github.com/mahenzon/flask-lessons/tree/lesson-7))
+    - create Tag model
+    - create Article-Tag association table
+    - configure relationships
+    - add command for creating tags
+    - update CreateArticleForm with SelectMultipleField for adding tags
+    - set selected Tags to Article on create 
+    - load tags for article using joinedload
+    - show Article tags on article details view
