@@ -3,6 +3,7 @@ from flask import Flask, render_template
 from flask_migrate import Migrate
 
 from blog.security import flask_bcrypt
+from blog.admin import admin
 from blog.views.auth import login_manager, auth_app
 from blog.views.users import users_app
 from blog.views.articles import articles_app
@@ -17,6 +18,8 @@ app.config.from_object(f"blog.configs.{cfg_name}")
 # security
 flask_bcrypt.init_app(app)
 
+# admin
+admin.init_app(app)
 
 # views
 app.register_blueprint(auth_app, url_prefix="/auth")
