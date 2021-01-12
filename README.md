@@ -9,6 +9,7 @@
 - Flask-Login==0.5.0
 - alembic==1.4.3
 - Flask-Migrate==2.5.3
+- Flask-Admin==1.5.7
 
 
 ### Lessons:
