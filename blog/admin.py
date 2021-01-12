@@ -15,3 +15,4 @@ admin = Admin(name="Blog Admin", template_mode="bootstrap4")
 
 # Add views
 admin.add_view(CustomView(models.Tag, db.session, category="Models"))
+admin.add_view(CustomView(models.Article, db.session, category="Models"))
