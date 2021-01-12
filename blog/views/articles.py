@@ -45,6 +45,7 @@ def create_article():
         try:
             db.session.commit()
         except IntegrityError:
+            db.session.rollback()
             current_app.logger.exception("Could not create a new article!")
             error = "Could not create article!"
         else:

@@ -46,6 +46,7 @@ def register():
         try:
             db.session.commit()
         except IntegrityError:
+            db.session.rollback()
             current_app.logger.exception("Could not create user!")
             error = "Could not create user!"
         else:
