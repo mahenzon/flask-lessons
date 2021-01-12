@@ -92,3 +92,12 @@
     - customize User admin view, demo `column_exclude_list`, `column_editable_list`, `can_create`, `can_edit`, `can_delete`
     - limit view access only for staff
     - limit admin index access only for staff too
+
+9. JSON REST API. CRUD, swagger, marshmallow, flask-combo-jsonapi, combojsonapi ([result](https://github.com/mahenzon/flask-lessons/tree/lesson-9))
+    - install Flask-COMBO-JSONAPI
+    - create first marshmallow Schema
+    - create first ResourceList and ResourceDetail
+    - register first api views
+    - install ComboJSONAPI and apispec + PyYAML
+    - create and use api spec plugin
+    - create schemas and views for the rest of models
