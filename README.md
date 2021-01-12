@@ -80,3 +80,12 @@
     - set selected Tags to Article on create 
     - load tags for article using joinedload
     - show Article tags on article details view
+
+8. Flask-Admin ([result](https://github.com/mahenzon/flask-lessons/tree/lesson-8))
+    - install and configure Flask-Admin
+    - create base CustomView, add models to admin
+    - add string representations to models
+    - customize Tag admin view to add features: `column_searchable_list`, `column_filters`, `can_export`
+    - customize User admin view, demo `column_exclude_list`, `column_editable_list`, `can_create`, `can_edit`, `can_delete`
+    - limit view access only for staff
+    - limit admin index access only for staff too
