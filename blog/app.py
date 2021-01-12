@@ -9,6 +9,7 @@ from blog.views.users import users_app
 from blog.views.articles import articles_app
 from blog.views.authors import authors_app
 from blog.models.database import db
+from blog.api import init_api
 
 cfg_name = os.environ.get("CONFIG_NAME") or "ProductionConfig"
 
@@ -27,10 +28,12 @@ app.register_blueprint(users_app, url_prefix="/users")
 app.register_blueprint(articles_app, url_prefix="/articles")
 app.register_blueprint(authors_app, url_prefix="/authors")
 
+# api views
+api = init_api(app)
+
 # db
 db.init_app(app)
 migrate = Migrate(app, db, compare_type=True)
-
 
 # auth
 login_manager.init_app(app)
