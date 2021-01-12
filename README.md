@@ -11,6 +11,8 @@
 - Flask-Migrate==2.5.3
 - Flask-Admin==1.5.7
 - Flask-COMBO-JSONAPI==1.0.4
+- ComboJSONAPI==1.0.5
+- apispec==2.0.2
 
 
 ### Lessons:
