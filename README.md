@@ -10,6 +10,7 @@
 - alembic==1.4.3
 - Flask-Migrate==2.5.3
 - Flask-Admin==1.5.7
+- Flask-COMBO-JSONAPI==1.0.4
 
 
 ### Lessons:
