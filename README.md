@@ -111,3 +111,11 @@
     - create UserPermission
     - add UserPermission for User views
     - create permission for PATCH user
+
+11. Heroku. App Deployment ([result](https://github.com/mahenzon/flask-lessons/tree/lesson-11))
+    - add ProductionConfig
+    - create Procfile
+    - connect Heroku
+    - set auto deploy
+    - configure env vars
+    - run schema and data migrations
