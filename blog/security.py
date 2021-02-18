@@ -1,7 +1,5 @@
 """
-TODO: upgrade to v1.0.0 as soon as released
-
-https://github.com/maxcountryman/flask-bcrypt/pull/66
+pip install Bcrypt-Flask
 """
 
 from flask_bcrypt import Bcrypt

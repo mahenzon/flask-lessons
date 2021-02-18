@@ -57,7 +57,7 @@
     - set compare_type = True and demo column changes
 
 5. Flask-Bcrypt, WTForms. Allow users to register and login ([result](https://github.com/mahenzon/flask-lessons/tree/lesson-5))
-    - install and configure Flask-Bcrypt
+    - install and configure Flask-Bcrypt (`pip install Bcrypt-Flask`)
     - create password field for user, hash it
     - add first_name and last_name to User, mark email field as unique
     - install WTForms + email-validator and Flask-WTF
